@@ -39,3 +39,5 @@ if y == 2 and x >= 2 :
 if y == -3 and x >= 3 :
     print("Вторая функция")
 else: print("Out of range")
+
+4. 
