@@ -150,3 +150,32 @@ else: print("IDK")
 
 12.
 
+import math
+a = int(input('Трёхзначное число: '))
+if a%10 == a//100:
+    print("Является")
+else: print("Bad Gatway 502")
+
+13.
+
+import math
+a = int(input('Трёхзначное число: '))
+if a%10 == a//100 == (a//10)//10:
+    print("a)Что-то там..")
+else: print("a)Не что-то там..")
+if a%10 == a//100 or a%10 == (a//10)//10 or a//100 == (a//10)//10:
+    print("b)Что-то там..")
+else: print("b)Не что-то там..")
+
+
+14.
+
+import math
+a = int(input('4исло: '))
+if a%2 == 0:
+    print("Чётное число")
+else: print("Не чётное число")
+
+
+15.
+
