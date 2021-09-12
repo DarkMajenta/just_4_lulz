@@ -45,3 +45,22 @@ if int(input("Второе число: ")) < a:
     print ("Первое больше")
 else: print("Второе больше")
 /// забыл реализацию равнозначных чисел
+
+5. a = int(input("Первое число: "))
+a1 = int(input("Второе число: "))
+if a > a1:
+    print("Max: 1th, Min: 2th")
+elif a < a1:
+    print("Max: 2th, Min: 1th")
+elif a == a1:
+    print("equal")
+    
+6. a = int(input("Год рождения:"  ))
+a1 = int(input("Месяц рождения: "))
+b = int(input("Сегодняшний год:" )) - a
+if (int(input("Сегодняшний месяц: ")) > a1):
+    b = b+1
+    print("Age: ", b)
+else: 
+    b = b-1
+    print("Age: ", b)
