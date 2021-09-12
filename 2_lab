@@ -86,3 +86,17 @@ if x > 0 :
 elif x < 0:
     x = 1 + 2*((sqr(sin(x))))
     print("Значение y:", x)
+9. 
+import math
+a = float(input('Первое число: '))
+b = float(input("Второе число: "))
+if a < b:
+    a = abs(a-b)
+    b = abs(a-b)
+    print("a = ",a," b = ",b)
+if a > b:
+    b = abs(a-b)
+    a = abs(a-b)
+    print("a = ",a," b = ",b)
+    
+10. 
