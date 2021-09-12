@@ -64,3 +64,25 @@ if (int(input("Сегодняшний месяц: ")) > a1):
 else: 
     b = b-1
     print("Age: ", b)
+
+7. 
+import math
+print("Только целые числа")
+x = int(input("Значение x: "))
+if x > 0 :
+    x = sin(sqr(x))
+    print("Значение y:", x)
+elif x < 0:
+    x = 1 - 2*(sqr(sin(x)))
+    print("Значение y:", x)
+    
+8. 
+import math
+print("Только целые числа")
+x = int(input("Значение x: "))
+if x > 0 :
+    x = sin(sqr(x))
+    print("Значение y:", x)
+elif x < 0:
+    x = 1 + 2*((sqr(sin(x))))
+    print("Значение y:", x)
