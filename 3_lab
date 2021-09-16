@@ -1,0 +1,13 @@
+1. Conver
+a = int(input("Курс: "))
+i = 1
+while i <= 20:
+    print(i,"доллар = ",(i*a))
+    i +=1
+  
+2. 
+a = int(input("Число: "))
+i = 1
+while i <= 10:
+    print("Произведение на ",i," = ",(i*a))
+    i +=1
