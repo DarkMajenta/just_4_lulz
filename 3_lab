@@ -11,3 +11,43 @@ i = 1
 while i <= 10:
     print("Произведение на ",i," = ",(i*a))
     i +=1
+
+
+3. 
+
+a = int(input("Первое число: "))
+b = int(input("Второе число: "))
+count = int(0)
+i = int(0)
+a1 = int(0)
+if a <= b:
+        while i != (b-a):
+            a1 = (a*a)+a1
+            i +=1
+            a +=1
+        print("Summ: ",a1);
+else: print(" kekekekekekekekekeke ")
+
+
+4.
+a = (input("Число, скорее всего 5-значное"))
+count = int(0)
+b = a.split()
+b = list(reversed(b))
+while count != 5:
+    b = a.split
+    b = list(reversed(a))
+    print("step result: ", b)
+    count +=1
+    print(count)
+    
+    
+    
+5.
+a = int(input("Первое число: "))
+#b = int(input("Второе число: "))
+if 1 < a <= 10:
+    print("OK")
+    count = int(0)
+    while i < a :
+        
