@@ -44,13 +44,20 @@ while count != 5:
     
     
 5.
-a = int(input("Первое число: "))
-#b = int(input("Второе число: "))
+
+a = int(input("N = "))
 if 1 < a <= 10:
-    print("OK")
-    count = int(0)
+    print("OK. Working..") # чек числа на совместимость))
+    cont_1 = int(1)
+    cont_2 = int(0)
+    i = int(0)
     while i < a :
-        
+        i+=1 # нужен ли такой счётчик или можно оптимизировать код
+        cont_1 = i*cont_1 # тут происходит магия вычисления факториала для конкретного числа
+        cont_2 +=cont_1 # тут происходит магия сложения факториалов
+    print("Жобисдон") # чек работы цикла
+print("Факториал ",a,"равен ",cont_1)
+print("Их сумма ",cont_2)        
 
 6.
 
@@ -67,3 +74,6 @@ while cont_2 <= value:
     cont_1 = cont_2
     cont_2 = (cont_2+cont_1)
 print("Value = ",cont_2)
+
+
+
