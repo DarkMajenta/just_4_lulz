@@ -100,3 +100,16 @@ else: print("404 Bad maidcore O_o I'm bug! FIX ME!!1")
 
 12. Скорее всего можно лучше оптимизировать код, пробуй и получится!
 
+value = int(input("Факториал: "))
+if value == 1:
+    print("Число = 1")
+    count = int(1)
+    ref = int(1)
+    while value != ref:
+        print("OK..working")
+        count +=1
+        ref = ref*count
+        if value == ref:
+            print("Число = ",count)
+if value < 0:
+    print("Отрицательный факториал?")
