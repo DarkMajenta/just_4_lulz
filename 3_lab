@@ -29,7 +29,7 @@ if a <= b:
 else: print(" kekekekekekekekekeke ")
 
 
-4.
+4. Не очень хорошая реализация, но работает.
 a = (input("Число, скорее всего 5-значное"))
 count = int(0)
 b = a.split()
@@ -51,3 +51,19 @@ if 1 < a <= 10:
     count = int(0)
     while i < a :
         
+
+6.
+
+#В процессе
+
+7. Что за изврат придумал данный синтаксис..
+
+
+value = int(input("Значение n = "))
+print("Первое число в последовательности возможно 1")
+cont_1=int(0)
+cont_2=int(1)
+while cont_2 <= value:
+    cont_1 = cont_2
+    cont_2 = (cont_2+cont_1)
+print("Value = ",cont_2)
