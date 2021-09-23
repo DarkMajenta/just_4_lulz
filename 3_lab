@@ -76,4 +76,20 @@ while cont_2 <= value:
 print("Value = ",cont_2)
 
 
+8. #Опять делить на массив, он же лист в документации 
+   #https://docs.python.org/3/tutorial/introduction.html#lists
 
+
+9.
+
+value = int(input("Число для проверки: "))
+a = int(input("Первое число прогрессии: "))
+if value > a:
+    step = int(input("Шаг прогрессии: "))
+    while value > a:
+        a +=step
+        print("Waiting..")
+        if a == value:
+            print("Данное число является частью прогрессии..возможно")
+if value == a: print(" Realy??! ")
+else: print("404 Bad maidcore O_o I'm bug! FIX ME!!1")
