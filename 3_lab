@@ -70,9 +70,11 @@ value = int(input("Значение n = "))
 print("Первое число в последовательности возможно 1")
 cont_1=int(0)
 cont_2=int(1)
+cont_3=int(0)
 while cont_2 <= value:
-    cont_1 = cont_2
-    cont_2 = (cont_2+cont_1)
+      cont_3 = (cont_2+cont_1)
+      cont_1 = cont_2
+      cont_2=cont_3
 print("Value = ",cont_2)
 
 
