@@ -83,7 +83,7 @@ while cont_2 <= value:
 print("Value = ",cont_2)
 
 
-8. 
+8. by Alina
 
 n = int(input("N = "))
 a = int(0)
