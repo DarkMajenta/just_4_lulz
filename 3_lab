@@ -88,20 +88,22 @@ print("Value = ",cont_2)
 n = int(input("N = "))
 a = int(0)
 n1 = n
-min_1 = int(9)
+min_w = int(9)
 k = 0
 while n != 0:
     if (n%10) < min_w:
-    a = n%10
-    k+=1
-    print(k)
- n = n//10
-k=0;
-while n != 0:
-    if (n%10) == a:
-    k +=1
-    n1 = n1//10
-    print(k)
+        a = n%10
+        min_w = a
+        k+=1
+        print("result_step_to_min",k)
+    n = n // 10;
+k = 0;
+print("N = ",n1, ' min = ',a)
+while n1 != 0:
+    if (n1%10) == min_w:
+        k+=1
+    n1 = n1 // 10
+print("result_count: ",k)
 
 9.
 
