@@ -74,3 +74,41 @@ while a[i] != '!':
 print("i'll break")
 print('Чётные: ',b)
 print('Заканчиваются на ноль: ',c)
+
+
+7
+
+from random import randrange, randint
+#from math import ldexp
+
+print('Список имён абитуриентов')
+math = []
+russ = []
+inf = []
+name_list=[]
+print('For stop press !')
+name_list.append(input('press Enter'))
+i=int(0)
+while name_list[i] != '!':
+	i+=1
+	name_list.append(input('Следующий: '))
+	#print(a)
+	if name_list[i] == '!':
+		name_list.pop(0)
+		name_list.pop(-1)
+		print(name_list)
+		break
+for i1 in range(i):
+	s = (randint(0,100))
+	i1+=1
+	math.append(s)
+	s = (randint(0,100))
+	russ.append(s)
+	s = (randint(0,100))
+	inf.append(s)
+	#math.append(Random.random(0,100))
+result = []
+i1 = 0
+for i1 in range(i):
+	
+print(math,' ',russ,' ',inf )
