@@ -1,0 +1,76 @@
+1. Welcom to g0vnocode)))
+
+from random import Random, random, randint
+print("import_ok") #backtrace
+n = int(20) #def_count_steps
+a = [] # def_array
+print(a,' empty array')
+for i in range(n):
+	def random_element():
+		random_element=(random_element.random(163,190))
+	#print(random_element,' insert this')
+	a.append(random_element)
+print(a)
+
+2
+
+a = []
+b = int(input('1th: '))
+step = int(input('Step: '))
+for i in range(10):
+	a.append(b+step)
+	#print(a)
+	#print('step cycle: ',i)
+	b+=step
+print(a)
+
+3
+
+s=input('Elements: ')#input with 'space'
+a = s.split(' ')
+print (a)
+a.sort(reverse=True)
+print(a)
+
+4
+
+a = []
+b = []
+for i in range (int(input('Колличество элементов: '))):
+	a.append(int(input('Element: ')))
+print(a)
+for i in range (len(a)):
+	#print('O____o')
+	if i%2 == 0:
+		#print(a[i])
+		b.append(a[i])
+	else:
+		#print('-',a[i])
+		b.append(-a[i])
+print(b)
+
+5
+Непоняф задание
+
+6
+
+a = []
+b = []
+c = []
+i=int(0)
+print('For stop press !')
+a.append(input('bug firsth elem 0__o'))
+while a[i] != '!':
+	i+=1
+	a.append(input('Следующий: '))
+	#print(a)
+	if a[i] == '!':
+		print(b)
+		break
+	if (int(a[i]))%2 == 0:
+		b.append(a[i])
+	if a[i].endswith('0'):
+		c.append(a[i])	
+print("i'll break")
+print('Чётные: ',b)
+print('Заканчиваются на ноль: ',c)
