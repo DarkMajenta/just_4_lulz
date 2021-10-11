@@ -112,3 +112,11 @@ i1 = 0
 for i1 in range(i):
 	
 print(math,' ',russ,' ',inf )
+
+16
+
+n = int(input('N= '))
+a=[]
+for i in range(n):
+	a.append(i*11)
+	print(a)
