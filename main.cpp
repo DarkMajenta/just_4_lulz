@@ -1,3 +1,7 @@
+sources(BIG THX):
+https://youtu.be/dwij9ZytWbQ
+https://github.com/reo7sp/tgbot-cpp
+
 #include <iostream>
 #include <stdio.h>
 #include <tgbot/tgbot.h>
