@@ -58,7 +58,7 @@ string get_time_as_str()
 }
 
 int main() {
-    Bot bot("PLASE TOKEN HERE");
+    Bot bot("PLACE TOKEN HERE");
 
     InlineKeyboardMarkup::Ptr keyboard(new InlineKeyboardMarkup);
     vector<InlineKeyboardButton::Ptr> row0;
