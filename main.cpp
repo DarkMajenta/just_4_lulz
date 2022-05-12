@@ -1,6 +1,7 @@
 //BIG THX: https://youtu.be/dwij9ZytWbQ
 //         https://www.youtube.com/channel/UCu60M9W_SX-SNo53CDNVJ4w
 //         https://github.com/reo7sp/tgbot-cpp
+//         https://stackoverflow.com/questions/36702888/download-an-image-from-an-url-using-curl-in-c
 #include <iostream>
 #include <stdio.h>
 #include <tgbot/tgbot.h>
@@ -122,7 +123,7 @@ bool download_jpeg(char* url)
 
 int main()
 {
-    Bot bot("KEY API HERE!");
+    Bot bot("KEY API HERE..or token");
 
     const string photoFilePath = "out.jpg";
     const string photoMimeType = "image/jpeg";
