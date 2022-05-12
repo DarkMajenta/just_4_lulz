@@ -1,7 +1,6 @@
 //BIG THX: https://youtu.be/dwij9ZytWbQ
 //         https://www.youtube.com/channel/UCu60M9W_SX-SNo53CDNVJ4w
 //         https://github.com/reo7sp/tgbot-cpp
-
 #include <iostream>
 #include <stdio.h>
 #include <tgbot/tgbot.h>
@@ -15,6 +14,7 @@
 #include <nlohmann/json.hpp>
 #include <curl/curl.h>
 
+//https://thiscatdoesnotexist.com/
 using namespace std;
 using namespace TgBot;
 
@@ -37,7 +37,7 @@ static int Writer(char *buffer, size_t size, size_t nmemb, string *html)
 string get_request(string link)
 {
     CURL *curl;
-    std::string data;
+    string data;
     curl=curl_easy_init();
     curl_easy_setopt(curl, CURLOPT_URL, link.c_str());
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, Writer);
@@ -69,47 +69,62 @@ string get_time_as_str()
     return buf;
 }
 
-//int sendTelegramPhoto(string chat_id, string path_to_photo, string caption = NULL){
-//    CURL *curl;
-//    CURLcode response;
-//    curl_global_init(CURL_GLOBAL_ALL);
-//    curl = curl_easy_init();
-//    if (curl)
-//    {
-//        curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-//        curl_easy_setopt(curl, CURLOPT_POST, 1);
-//        curl_easy_setopt(curl, CURLOPT_URL,     "https://api.telegram.org/bottoken/sendPhoto");
-//        curl_easy_setopt(curl, CURLOPT_DEFAULT_PROTOCOL, "https");
-//        struct curl_slist *headers = NULL;
-//        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-//        curl_slist_append(headers, "Content-Type: multipart/form-data");
-//        curl_slist_append(headers, "charset=utf-8");
-//        curl_mime *mime;
-//        curl_mimepart *part;
-//        mime = curl_mime_init(curl);
-//        part = curl_mime_addpart(mime);
-//        curl_mime_name(part, "chat_id");
-//        curl_mime_data(part, chat_id.c_str(), CURL_ZERO_TERMINATED);
-//        part = curl_mime_addpart(mime);
-//        curl_mime_name(part, "photo");
-//        curl_mime_filedata(part, path_to_photo.c_str("example.jpg"));
-//        curl_mime_type(part, "image/jpeg");
-//        part = curl_mime_addpart(mime);
-//        curl_mime_name(part, "caption");
-//        curl_mime_data(part, caption.c_str().c_str(), CURL_ZERO_TERMINATED);
-//        curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
-//        response = curl_easy_perform(curl);
-//        curl_mime_free(mime);
-//        curl_slist_free_all(headers);
-//    }
-//    curl_easy_cleanup(curl);
-//    return 0;
-//}
 
-int main() {
-    Bot bot("KEY_API_HERE");
+size_t callbackfunction(void *ptr, size_t size, size_t nmemb, void* userdata)
+{
+    FILE* stream = (FILE*)userdata;
+    if (!stream)
+    {
+        printf("!!! No stream\n");
+        return 0;
+    }
 
-    const string photoFilePath = "example.jpg";
+    size_t written = fwrite((FILE*)ptr, size, nmemb, stream);
+    return written;
+}
+
+bool download_jpeg(char* url)
+{
+    FILE* fp = fopen("out.jpg", "wb");
+    if (!fp)
+    {
+        printf("!!! Failed to create file on the disk\n");
+        return false;
+    }
+
+    CURL* curlCtx = curl_easy_init();
+    curl_easy_setopt(curlCtx, CURLOPT_URL, url);
+    curl_easy_setopt(curlCtx, CURLOPT_WRITEDATA, fp);
+    curl_easy_setopt(curlCtx, CURLOPT_WRITEFUNCTION, callbackfunction);
+    curl_easy_setopt(curlCtx, CURLOPT_FOLLOWLOCATION, 1);
+
+    CURLcode rc = curl_easy_perform(curlCtx);
+    if (rc)
+    {
+        printf("!!! Failed to download: %s\n", url);
+        return false;
+    }
+
+    long res_code = 0;
+    curl_easy_getinfo(curlCtx, CURLINFO_RESPONSE_CODE, &res_code);
+    if (!((res_code == 200 || res_code == 201) && rc != CURLE_ABORTED_BY_CALLBACK))
+    {
+        printf("!!! Response code: %d\n", res_code);
+        return false;
+    }
+
+    curl_easy_cleanup(curlCtx);
+
+    fclose(fp);
+
+    return true;
+}
+
+int main()
+{
+    Bot bot("KEY API HERE!");
+
+    const string photoFilePath = "out.jpg";
     const string photoMimeType = "image/jpeg";
 
     InlineKeyboardMarkup::Ptr keyboard(new InlineKeyboardMarkup);
@@ -140,6 +155,7 @@ int main() {
 
     bot.getEvents().onCommand("random_picture", [&bot, &photoFilePath, &photoMimeType](Message::Ptr message) {
         bot.getApi().sendPhoto(message->chat->id, InputFile::fromFile(photoFilePath, photoMimeType));
+        download_jpeg("https://thiscatdoesnotexist.com/");
     });
 
     bot.getEvents().onCallbackQuery([&bot, &keyboard](CallbackQuery::Ptr query) {
@@ -178,6 +194,7 @@ int main() {
     }
     return 0;
 }
+
 
 
 
