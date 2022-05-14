@@ -2,6 +2,10 @@
 //         https://www.youtube.com/channel/UCu60M9W_SX-SNo53CDNVJ4w
 //         https://github.com/reo7sp/tgbot-cpp
 //         https://stackoverflow.com/questions/36702888/download-an-image-from-an-url-using-curl-in-c
+//         https://stackoverflow.com/questions/36693792/text-parser-c-code#36696232
+//         https://stackoverflow.com/questions/46261431/parsing-through-text-file-with-c
+//         https://stackoverflow.com/questions/9551014/reading-parsing-text-file-input-c
+//         https://www.cplusplus.com/forum/beginner/879/
 #include <iostream>
 #include <stdio.h>
 #include <tgbot/tgbot.h>
